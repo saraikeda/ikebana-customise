@@ -48,6 +48,7 @@ export default function EditorScreen({
           <ArrangementPreview
             selectedPot={selectedPot}
             selectedFlowers={selectedFlowers}
+            setSelectedFlowers={setSelectedFlowers}
           />
         </div>
 
