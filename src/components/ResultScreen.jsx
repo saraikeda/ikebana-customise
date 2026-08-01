@@ -43,7 +43,7 @@ export default function ResultScreen({
                   </div>
 
                   <p className="flower-meaning-description">
-                    placeholder fo rdesctiption
+                    {flower.description}
                   </p>
                 </article>
               ))}

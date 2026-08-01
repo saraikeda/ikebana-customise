@@ -65,7 +65,7 @@ export default function EditorScreen({
                         Rotation: {flower.rotation ?? 0}°
                       </p>
                       <p className="flower-meaning-description">
-                        placeholder fo rdesctiption
+                        {flower.description}
                       </p>
                     </div>
 
