@@ -9,6 +9,19 @@ export default function EditorScreen({
   setSelectedFlowers,
   onFinish,
 }) {
+  const rotateFlower = (flowerId, direction) => {
+    setSelectedFlowers((currentFlowers) =>
+      currentFlowers.map((flower) =>
+        flower.id === flowerId
+          ? {
+              ...flower,
+              rotation: (flower.rotation ?? 0) + direction,
+            }
+          : flower
+      )
+    );
+  };
+
   return (
     <div className="screen screen-page">
       <div className="editor-shell">
@@ -48,11 +61,31 @@ export default function EditorScreen({
                   <article key={flower.id} className="flower-meaning-card">
                     <div>
                       <p className="flower-meaning-name">{flower.name}</p>
+                      <p className="flower-meaning-type">
+                        Rotation: {flower.rotation ?? 0}°
+                      </p>
+                      <p className="flower-meaning-description">
+                        placeholder fo rdesctiption
+                      </p>
                     </div>
 
-                    <p className="flower-meaning-description">
-                      placeholder fo rdesctiption
-                    </p>
+                    <div className="flower-meaning-actions">
+                      <button
+                        type="button"
+                        className="flower-meaning-button"
+                        onClick={() => rotateFlower(flower.id, -15)}
+                      >
+                        Rotate Left
+                      </button>
+
+                      <button
+                        type="button"
+                        className="flower-meaning-button"
+                        onClick={() => rotateFlower(flower.id, 15)}
+                      >
+                        Rotate Right
+                      </button>
+                    </div>
                   </article>
                 ))}
               </div>

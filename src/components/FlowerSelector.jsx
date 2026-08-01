@@ -35,6 +35,7 @@ export default function FlowerSelector({
         {
           ...flower,
           ...defaultFlowerPosition(selectedFlowers.length),
+          rotation: 0,
         },
       ]);
     }
