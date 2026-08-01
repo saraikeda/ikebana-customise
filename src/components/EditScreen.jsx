@@ -38,6 +38,30 @@ export default function EditorScreen({
             selectedFlowers={selectedFlowers}
             setSelectedFlowers={setSelectedFlowers}
           />
+
+          <div className="flower-meaning-panel">
+            <h3 className="flower-meaning-title">Selected Flower Meaning</h3>
+
+            {selectedFlowers.length > 0 ? (
+              <div className="flower-meaning-list">
+                {selectedFlowers.map((flower) => (
+                  <article key={flower.id} className="flower-meaning-card">
+                    <div>
+                      <p className="flower-meaning-name">{flower.name}</p>
+                    </div>
+
+                    <p className="flower-meaning-description">
+                      placeholder fo rdesctiption
+                    </p>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <p className="flower-meaning-empty">
+                Select a flower to see its description.
+              </p>
+            )}
+          </div>
         </div>
 
         <div className="editor-section">

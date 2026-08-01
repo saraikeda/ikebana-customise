@@ -12,7 +12,7 @@ export default function ResultScreen({
           Your Ikebana Arrangement
         </h1>
 
-        <div className="result-preview">
+        <div className="result-preview result-preview-wide">
           <ArrangementCanvas
             selectedPot={selectedPot}
             selectedFlowers={selectedFlowers}
@@ -31,11 +31,29 @@ export default function ResultScreen({
           Selected Flowers
         </h2>
 
-        <ul className="result-list">
-          {selectedFlowers.map((flower) => (
-            <li key={flower.id}>{flower.name}</li>
-          ))}
-        </ul>
+        <div className="flower-meaning-panel result-meaning-panel">
+          <h3 className="flower-meaning-title">Flower Meaning Summary</h3>
+
+          {selectedFlowers.length > 0 ? (
+            <div className="flower-meaning-list">
+              {selectedFlowers.map((flower) => (
+                <article key={flower.id} className="flower-meaning-card">
+                  <div>
+                    <p className="flower-meaning-name">{flower.name}</p>
+                  </div>
+
+                  <p className="flower-meaning-description">
+                    placeholder fo rdesctiption
+                  </p>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="flower-meaning-empty">
+              No flowers were selected.
+            </p>
+          )}
+        </div>
 
         <button
           onClick={onRestart}

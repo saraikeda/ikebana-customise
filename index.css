@@ -177,6 +177,63 @@ textarea {
   gap: 1.2rem;
 }
 
+.flower-meaning-panel {
+  width: min(900px, 100%);
+  padding: 1.2rem 1.25rem;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #f8fbff 0%, #edf4fb 100%);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06);
+}
+
+.flower-meaning-title {
+  margin: 0 0 0.9rem;
+  color: #23415f;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.flower-meaning-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.flower-meaning-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.flower-meaning-name {
+  margin: 0;
+  color: #17324d;
+  font-weight: 700;
+}
+
+.flower-meaning-type {
+  margin: 0.25rem 0 0;
+  color: #5b7288;
+  font-size: 0.92rem;
+}
+
+.flower-meaning-description {
+  margin: 0;
+  color: #32506b;
+  line-height: 1.5;
+  max-width: 18rem;
+  text-align: right;
+}
+
+.flower-meaning-empty {
+  margin: 0;
+  color: #526579;
+  text-align: center;
+}
+
 .selector-grid {
   width: 100%;
   display: grid;
@@ -235,7 +292,8 @@ textarea {
 }
 
 .preview-panel {
-  width: 100%;
+  width: min(100%, 860px);
+  margin-inline: auto;
   padding: 1.5rem;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.82);
@@ -246,6 +304,9 @@ textarea {
 
 .preview-canvas {
   position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
   min-height: 14rem;
   padding: 1.5rem;
   border-radius: 22px;
@@ -309,5 +370,14 @@ textarea {
 }
 
 .result-preview {
+  margin-bottom: 2rem;
+}
+
+.result-preview-wide {
+  width: min(100%, 860px);
+  margin-inline: auto;
+}
+
+.result-meaning-panel {
   margin-bottom: 2rem;
 }
