@@ -85,12 +85,24 @@ export default function ArrangementCanvas({
   return (
     <div className="preview-panel">
       <div ref={canvasRef} className="preview-canvas">
+        {selectedPot?.backImage && (
+          <img
+            src={selectedPot.backImage}
+            alt={selectedPot.name}
+            className="option-image preview-pot preview-pot-back"
+          />
+        )}
+
         {selectedFlowers.map((flower) => (
           <button
             key={flower.id}
             type="button"
             className={`preview-flower-button ${editable ? "preview-flower-button-editable" : ""}`}
-            style={{ left: `${flower.x}%`, top: `${flower.y}%` }}
+            style={{
+              left: `${flower.x}%`,
+              top: `${flower.y}%`,
+              transform: `translate(-50%, -50%) rotate(${flower.rotation ?? 0}deg)`,
+            }}
             onPointerDown={(event) => handleFlowerPointerDown(flower, event)}
             aria-label={`Move ${flower.name}`}
             tabIndex={editable ? 0 : -1}
@@ -104,7 +116,13 @@ export default function ArrangementCanvas({
           </button>
         ))}
 
-        {selectedPot && (
+        {selectedPot?.frontImage ? (
+          <img
+            src={selectedPot.frontImage}
+            alt={selectedPot.name}
+            className="option-image preview-pot preview-pot-front"
+          />
+        ) : selectedPot && (
           <img
             src={selectedPot.image}
             alt={selectedPot.name}
