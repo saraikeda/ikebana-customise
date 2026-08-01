@@ -1,5 +1,19 @@
 import { flowers } from "../data/flowers";
 
+const defaultFlowerPosition = (index) => {
+  const presetPositions = [
+    { x: 44, y: 30 },
+    { x: 58, y: 36 },
+    { x: 32, y: 38 },
+    { x: 50, y: 20 },
+    { x: 67, y: 48 },
+    { x: 24, y: 52 },
+    { x: 45, y: 58 },
+  ];
+
+  return presetPositions[index % presetPositions.length];
+};
+
 export default function FlowerSelector({
   selectedFlowers,
   setSelectedFlowers,
@@ -18,7 +32,10 @@ export default function FlowerSelector({
     } else {
       setSelectedFlowers([
         ...selectedFlowers,
-        flower,
+        {
+          ...flower,
+          ...defaultFlowerPosition(selectedFlowers.length),
+        },
       ]);
     }
   };

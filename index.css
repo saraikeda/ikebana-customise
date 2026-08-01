@@ -245,6 +245,7 @@ textarea {
 }
 
 .preview-canvas {
+  position: relative;
   min-height: 14rem;
   padding: 1.5rem;
   border-radius: 22px;
@@ -252,21 +253,41 @@ textarea {
   border: 1px solid rgba(148, 163, 184, 0.18);
 }
 
-.preview-flowers {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
 .preview-flower {
   height: 4.8rem;
 }
 
 .preview-pot {
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
   height: 10rem;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.preview-flower-button {
+  position: absolute;
+  width: 4rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.preview-flower-button-editable {
+  cursor: grab;
+  touch-action: none;
+}
+
+.preview-flower-button-editable:active {
+  cursor: grabbing;
+}
+
+.preview-flower-button:disabled {
+  cursor: default;
 }
 
 .result-list {

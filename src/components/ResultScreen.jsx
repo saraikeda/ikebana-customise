@@ -1,3 +1,5 @@
+import ArrangementCanvas from "./ArrangementCanvas";
+
 export default function ResultScreen({
   selectedPot,
   selectedFlowers,
@@ -10,25 +12,11 @@ export default function ResultScreen({
           Your Ikebana Arrangement
         </h1>
 
-        <div className="preview-panel result-preview">
-          <div className="preview-flowers">
-            {selectedFlowers.map((flower) => (
-              <img
-                key={flower.id}
-                src={flower.image}
-                alt={flower.name}
-                className="option-image preview-flower"
-              />
-            ))}
-          </div>
-
-          {selectedPot && (
-            <img
-              src={selectedPot.image}
-              alt={selectedPot.name}
-              className="option-image preview-pot"
-            />
-          )}
+        <div className="result-preview">
+          <ArrangementCanvas
+            selectedPot={selectedPot}
+            selectedFlowers={selectedFlowers}
+          />
         </div>
 
         <h2 className="section-title" style={{ marginBottom: "0.5rem" }}>
