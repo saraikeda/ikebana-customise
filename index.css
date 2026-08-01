@@ -349,7 +349,12 @@ textarea {
 }
 
 .preview-pot-back {
-  z-index: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0.75rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  pointer-events: none;
 }
 
 .preview-pot-front {
