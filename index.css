@@ -336,7 +336,7 @@ textarea {
 }
 
 .preview-flower {
-  height: 10rem;
+  height: 20rem;
 }
 
 .preview-pot {
@@ -358,7 +358,7 @@ textarea {
 
 .preview-flower-button {
   position: absolute;
-  width: 8rem;
+  width: 12rem;
   padding: 0;
   border: 0;
   background: transparent;

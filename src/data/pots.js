@@ -9,7 +9,9 @@ export const pots = [
   {
     id: 2,
     name: "Long pot (purple)",
-    image: new URL("../images/purple_pot.PNG", import.meta.url).href,
+    backImage: new URL("../images/purple_pot_back.png", import.meta.url).href,
+    frontImage: new URL("../images/purple_pot_front.png", import.meta.url).href,
+    image: new URL("../images/purple_pot_front.png", import.meta.url).href,
   },
   {
     id: 3,
